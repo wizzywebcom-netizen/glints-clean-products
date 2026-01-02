@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glint Clean Product</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+header {
+    background: linear-gradient(to right, #0b6e4f, #119c70);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+
+nav {
+    background: #084c37;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffdd57;
+}
+
+section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #0b6e4f;
+    margin-bottom: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card div {
+    padding: 15px;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #0b6e4f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #119c70;
+}
+
+footer {
+    background: #0b6e4f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Glint Clean Product</h1>
+    <p>Manufacturers of Quality Chemical, Perfume & Cosmetic Products</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>Welcome</h2>
+    <p>
+        Glint Clean Product produces trusted cleaning chemicals, perfumes, and cosmetics
+        for homes, businesses, and personal care. Our products are affordable, effective,
+        and carefully manufactured.
+    </p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        We are a local manufacturing company focused on hygiene, cleanliness, and beauty.
+        Our goal is to deliver safe and high-quality products that meet everyday needs.
+    </p>
+</section>
+
+<section id="services">
+    <h2>Our Products</h2>
+
+    <div class="products">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581579185169-1c5f2a4c52f2" alt="Liquid Soap">
+            <div>
+                <h3>Liquid Soap</h3>
+                <p>Strong, gentle, and effective for daily use.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19" alt="Bleach">
+            <div>
+                <h3>Bleach</h3>
+                <p>Powerful disinfectant for home and industrial cleaning.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd" alt="Bar Soap">
+            <div>
+                <h3>Bar Soap</h3>
+                <p>Quality soap for skin cleanliness and freshness.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539" alt="Perfume">
+            <div>
+                <h3>Perfumes</h3>
+                <p>Long-lasting fragrances for men and women.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1608571424268-5b8f3c09c1df" alt="Cosmetics">
+            <div>
+                <h3>Cosmetics</h3>
+                <p>Body creams, lotions, and skincare products.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <p><strong>Email:</strong> glintcleanproduct@gmail.com</p>
+    <p><strong>Phone:</strong> 09069474898</p>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2026 Glint Clean Product. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Scroll animation
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            sec.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
